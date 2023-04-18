@@ -74,11 +74,11 @@ export default function PokemonInformation({ id }) {
     <>
       <div className="block h-fit w-2/6 bg-slate-200 mx-auto my-6 rounded-2xl border-8 border-yellow">
         <div className="flex">
-          <h1 className="mb-2 text-xl font-bold w-5/12">
+          <h1 className="mb-2 text-xl font-bold w-5/12 text-left">
             Name: {pokemon.name}
           </h1>
           <span className="w-1/3"></span>
-          <h1 className="mb-2 text-2xl font-bold w-1/3">HP: {pokemon.hp}</h1>
+          <h1 className="mb-2 text-2xl font-bold w-1/3 text-right px-2">HP: {pokemon.hp}</h1>
         </div>
         <img
           src={fancyPicture}
@@ -86,26 +86,29 @@ export default function PokemonInformation({ id }) {
           className="mx-auto border-4 border-black rounded-2xl bg-white w-96"
         />
         <div className="block h-fit w-4/6 bg-slate-100 mx-auto my-1 rounded-2xl border-2 border-gold">
-          <p className="mb-2 text-m font-bold">
+          <p className="mb-2 text-m font-bold text-center">
             {flavorText.ft}
           </p>
         </div>
         <div className="block h-fit w-4/6 bg-slate-100 mx-auto my-1 rounded-2xl border-2 border-gold">
-          <h1 className="mb-2 text-m font-bold">Type: {types()}</h1>
-          <h1 className="mb-2 text-m font-bold">Height: {pokemon.height} cm</h1>
-          <h1 className="mb-2 text-m font-bold">Weight: {pokemon.weight} kg</h1>
-          <h1 className="mb-2 text-m font-bold">Attack: {pokemon.attack}</h1>
-          <h1 className="mb-2 text-m font-bold">Defense: {pokemon.defense}</h1>
+          <h1 className="mb-2 text-m font-bold text-center">Type: {types()}</h1>
+          <h1 className="mb-2 text-m font-bold text-center">Height: {pokemon.height} cm</h1>
+          <h1 className="mb-2 text-m font-bold text-center">Weight: {pokemon.weight} kg</h1>
+          <h1 className="mb-2 text-m font-bold text-center">Attack: {pokemon.attack}</h1>
+          <h1 className="mb-2 text-m font-bold text-center">Defense: {pokemon.defense}</h1>
         </div>
       </div>
+      <div className="flex w-2/6 mx-auto">
       <button
-        className="w-2/6 font-bold py-2
+        className="w-full font-bold py-2 mx-auto
                          px-4 border-2 border-black 
                          rounded bg-dark-red hover:bg-red"
         onClick={back}
       >
         Back
       </button>
+      </div>
+
     </>
   );
 }

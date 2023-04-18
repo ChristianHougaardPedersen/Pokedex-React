@@ -29,13 +29,13 @@ export default function Thumbnail(properties) {
                  hover:border-8 hover:border-dark-red rounded-2xl"
         onClick={details}
       >
-        <p className="mb-2 text-2xl font-bold">#{properties.pokemon.id}</p>
+        <p className="mb-2 text-2xl font-bold text-center">#{properties.pokemon.id}</p>
         <img
           src={properties.pokemon.img}
           alt={properties.pokemon.name}
           className="w-28 h-28 mx-auto"
         />
-        <h1 className="mb-2 text-2xl font-bold">{name}</h1>
+        <h1 className="mb-2 text-2xl font-bold text-center">{name}</h1>
       </div>
     </>
   );

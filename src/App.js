@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, RouterProvider, Routes, createHashRouter } from "react-router-dom";
 import Pokedex from "./routes/Pokedex";
 import About from "./routes/About";
 import History from "./routes/History";
@@ -7,29 +7,44 @@ import Header from "./components/Header";
 import PokemonInformation from "./routes/PokemonInformation";
 
 function App() {
-  return (
-    <div className="App">
+
+  const layout = (
+    <>
       <Header />
-      <Routes>
-        <Route
-          path="/"
-          element={<Pokedex />}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/history"
-          element={<History />}
-        />
-        <Route
-          path="/pokemon/:pokemonId"
-          element={<PokemonInformation />}>
-        </Route>
-      </Routes>
-    </div>
-  );
+      <div className="main">
+        <Outlet />
+      </div>
+    </>
+  )
+
+  const router = createHashRouter([
+    {
+      element: layout,
+      children: [
+        {
+          path: "/",
+          element: <Pokedex />
+        },
+        {
+          path: "/about",
+          element: <About />     
+        },
+        {
+          path: "/history",
+          element: <History />
+        },
+        {
+          path: "/pokemon/:pokemonId",
+          element: <PokemonInformation />
+        }
+      ]
+    }
+  ]);
+
+  return (
+    <RouterProvider router={router} />
+  )
+
 }
 
 export default App;

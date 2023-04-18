@@ -57,28 +57,28 @@ export default function Pokedex() {
   return (
     <>
       <div className="bg-slate-200">
-      <h1 className="text-3xl font-bold underline">
-        This is the Pokedex page!
-      </h1>
-      <div className="grid grid-cols-3 px-10">
-        {pokemon.map((pokemon) => (
-         <Thumbnail key={pokemon.id} pokemon={pokemon} />
-        ))}
-      </div>
-      <div className="inline-flex py-10">
-        <button
-          className="bg-red hover:bg-dark-red text-gray-800 font-bold py-2 px-4 rounded-l"
-          onClick={handlePrevPage}
-        >
-          Previous
-        </button>
-        <button
-          className="bg-yellow hover:bg-gold text-gray-800 font-bold py-2 px-4 rounded-r"
-          onClick={handleNextPage}
-        >
-          Next
-        </button>
-      </div>
+        <h1 className="text-3xl font-bold underline text-center">
+          This is the Pokedex page!
+        </h1>
+        <div className="grid grid-cols-3 px-10">
+          {pokemon.map((pokemon) => (
+            <Thumbnail key={pokemon.id} pokemon={pokemon} />
+          ))}
+        </div>
+        <div className="py-10 flex">
+          <button
+            className="bg-red hover:bg-dark-red text-gray-800 font-bold py-2 px-4 rounded mx-auto border-4 border-gold"
+            onClick={handlePrevPage}
+          >
+            Previous
+          </button>
+          <button
+            className="bg-yellow hover:bg-gold text-gray-800 font-bold py-2 px-4 rounded mx-auto border-4 border-gold"
+            onClick={handleNextPage}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </>
   );

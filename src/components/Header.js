@@ -1,5 +1,5 @@
 import PokeballImage from "../images/pokeball.svg";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -45,7 +45,6 @@ export default function Header() {
           </div>
         </nav>
       </header>
-      <Outlet />
      
     </>
   );
