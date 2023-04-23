@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 export default function PokemonInformation({ id }) {
   // https://pokeapi.co/api/v2/pokemon-species/{id or name}/
-  // FLAVOUR TEXT!
   const [pokemon, setPokemon] = useState([]);
   const [flavorText, setFlavorText] = useState([]);
   let { pokemonId } = useParams();
@@ -36,7 +35,7 @@ export default function PokemonInformation({ id }) {
       .then((response) => response.json())
       .then((info) => {
         setFlavorText({
-          ft: info.flavor_text_entries[0].flavor_text,
+          ft: cleanFlavorText(info.flavor_text_entries[0].flavor_text),
         });
       });
   }
@@ -112,4 +111,3 @@ export default function PokemonInformation({ id }) {
     </>
   );
 }
-// TODO Fix flavortext convert - or remove it...

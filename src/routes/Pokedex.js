@@ -48,7 +48,7 @@ export default function Pokedex() {
   function createPokemon(pokemon) {
     return {
       name: pokemon.name,
-      type: pokemon.types[0].type.name, //TODO might have more than 1 type!
+      type: pokemon.types[0].type.name,
       img: pokemon.sprites.front_default,
       id: pokemon.id,
     };
@@ -57,9 +57,6 @@ export default function Pokedex() {
   return (
     <>
       <div className="bg-slate-200">
-        <h1 className="text-3xl font-bold underline text-center">
-          This is the Pokedex page!
-        </h1>
         <div className="grid grid-cols-3 px-10">
           {pokemon.map((pokemon) => (
             <Thumbnail key={pokemon.id} pokemon={pokemon} />
@@ -82,5 +79,4 @@ export default function Pokedex() {
       </div>
     </>
   );
-  // TODO bg color for pages?
 }

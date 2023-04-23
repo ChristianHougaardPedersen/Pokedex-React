@@ -1,7 +1,6 @@
 import "./App.css";
-import { Outlet, Route, RouterProvider, Routes, createHashRouter } from "react-router-dom";
+import { Outlet,  RouterProvider, createHashRouter } from "react-router-dom";
 import Pokedex from "./routes/Pokedex";
-import About from "./routes/About";
 import History from "./routes/History";
 import Header from "./components/Header";
 import PokemonInformation from "./routes/PokemonInformation";
@@ -24,10 +23,6 @@ function App() {
         {
           path: "/",
           element: <Pokedex />
-        },
-        {
-          path: "/about",
-          element: <About />     
         },
         {
           path: "/history",

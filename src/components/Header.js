@@ -22,16 +22,6 @@ export default function Header() {
               Pokédex
             </NavLink>
           </div>
-          <div className="flex lg:flex-1">
-            <NavLink
-              to={"/about"}
-              className={
-                "-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-gray-900 hover:bg-gray-50"
-              }
-            >
-              About
-            </NavLink>
-          </div>
 
           <div className="flex lg:flex-1">
             <NavLink

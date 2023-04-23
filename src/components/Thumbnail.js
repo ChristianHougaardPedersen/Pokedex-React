@@ -17,9 +17,9 @@ export default function Thumbnail(properties) {
   }
 
   function details() {
-    console.log(`Clicked ID# ${properties.pokemon.id}`); //TODO remove
     navigation(`/pokemon/${properties.pokemon.id}`);
   }
+
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function Thumbnail(properties) {
         <img
           src={properties.pokemon.img}
           alt={properties.pokemon.name}
-          className="w-28 h-28 mx-auto"
+          className="w-28 h-28 mx-auto border-2 border-gold rounded-2xl bg-slate-200"
         />
         <h1 className="mb-2 text-2xl font-bold text-center">{name}</h1>
       </div>
